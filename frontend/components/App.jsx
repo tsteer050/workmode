@@ -1,5 +1,5 @@
 import React from 'react';
-import Signup from './session/signup';
+import SignupFormContainer from './session/signup_form_container';
 import { Route, Switch } from 'react-router-dom';
 import Sidebar from './sidebar/sidebar';
 
@@ -7,10 +7,12 @@ import Sidebar from './sidebar/sidebar';
 
 export default () => (
   <div>
+    
     <Switch>
-      <Route path="/" component={Sidebar} />
-      <Route path="/signup" component={Signup} />
+      <Route exact path="/" component={Sidebar} />
+      <Route exact path="/signup" component={SignupFormContainer} />
     </Switch>
+    
     
   </div>
 );

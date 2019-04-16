@@ -14,7 +14,9 @@ class Sidebar extends React.Component {
       </div>
     ) : (
         <div>
+          <p>You aren't logged in</p>
           <Link to="/signup">Signup</Link>
+          <Link to="/login">Login</Link>
         </div>
       );
     return (

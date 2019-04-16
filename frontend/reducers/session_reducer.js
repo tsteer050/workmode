@@ -13,7 +13,7 @@ export default (state = _nullSession, action) => {
     case LOGOUT_CURRENT_USER:
       return _nullSession;
     case RECEIVE_CURRENT_USER:
-      return merge({}, _nullSession);
+      return merge({}, action.currentUser);
     default:
       return state;
   }

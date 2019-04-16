@@ -36,7 +36,7 @@ class Signup extends React.Component {
           <label>Password:
             <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
           </label>
-          <button type="submit" value="Submit"></button>
+          <input type="submit" value="Submit" />
         </form>
 
       </div>
