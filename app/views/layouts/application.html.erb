@@ -7,12 +7,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <% if current_user %>
       <script>
-        window.current_user = {
-          'id': current_user.id,
-          'username': <% current_user.username %>,
-          'email': <% current_user.email %>
+        window.currentUser = {
+          'id': <%= current_user.id %>, 
+          'username': '<%= current_user.username %>',
+          'email': '<%= current_user.email %>'
         };
       </script>
     <% end %>

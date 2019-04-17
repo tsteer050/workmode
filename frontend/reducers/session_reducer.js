@@ -1,7 +1,7 @@
 import { 
   LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER
 } from '../actions/session_actions';
-import { merge } from 'lodash';
+// import { merge } from 'lodash';
 
 const _nullSession = { currentUser: null }
 
@@ -13,7 +13,7 @@ export default (state = _nullSession, action) => {
     case LOGOUT_CURRENT_USER:
       return _nullSession;
     case RECEIVE_CURRENT_USER:
-      return merge({}, action.currentUser);
+      return { currentUser: action.currentUser.id };
     default:
       return state;
   }

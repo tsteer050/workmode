@@ -1,0 +1,484 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body, html {height: 100%; }
+
+#root {
+  height: 100%;
+}
+
+.page-contents {
+  height: 100%;
+}
+
+.main-view {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.main-message-area {
+
+}
+
+.login-with-default-button {
+  color: blue;
+  text-decoration: underline;
+}
+
+.login-with-default-button:hover {
+  cursor: pointer;
+}
+
+.main-sidebar {
+  background-color: #3f0e40;
+  height: 100%;
+  width: 200px;
+  color: white;
+}
+
+.show-account-info-button {
+  height: 100%;
+  width: 100%;
+  display: hidden;
+}
+
+.sidebar-username-tab {
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  background-color: #3f0e40;
+  color: white;
+  border: none;
+  padding: 13px;
+  height: 60px;
+  text-align: left;
+}
+
+.sidebar-username-tab h3 {
+  
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+.sidebar-username-tab h4 {
+  color: #148f72;
+  font-size: 22px;
+  display: inline-block;
+}
+
+.sidebar-username-tab h5 {
+  color: #AB9BA9;
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.sidebar-username-tab:hover {
+  cursor: pointer;
+  background-color: #2e0a2d;
+}
+
+.get-started-button {
+  height: 60px;
+  width: 180px;
+  background-color: #611F69;
+  border: 1px solid #611F69;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.splash-main {
+  font-family: 'Lato', sans-serif;
+  position: relative;
+}
+
+.splash-main h1{
+  margin: auto;
+  margin-top: 25px;
+  text-align: center;
+  width: 580px;
+  font-size: 52px;
+  font-weight: 800;
+
+}
+
+.splash-description {
+  position: absolute;
+  top: 160px;
+  right: 125px;
+  width: 420px;
+  height: 200px;
+  color: #454545;
+  font-size: 16px;
+
+}
+
+.splash-signup-call {
+  font-size: 14px;
+  color: #454545;
+  margin-top: 10px;
+}
+
+.splash-signup-call-link{
+  color: blue;
+}
+
+.splash-auth-links {
+  position: absolute;
+  top: 250px;
+  right: 125px;
+  height: 200px;
+  width: 420px;
+}
+
+.get-started-button:hover {
+  background-color: #441f45;
+  cursor: pointer;
+}
+ 
+ .splash-items {
+   width: 100%;
+   height: 100%;
+ }
+
+ .splash-login-items {
+   background-color: #f8f8f8;
+   height: 100%;
+ }
+
+.splash-nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+  background-color: white;
+  width: 100%;
+  height: 70px;
+}
+
+.splash-nav-items {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  color: #616061;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
+
+.splash-nav-items li {
+  padding: 6px;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+#splash-nav-ellipses-button {
+  height: 36px;
+  width: 36px;
+  border: 2px solid #616061;
+  border-radius: 4px;
+  color: #616061;
+  text-align: center;
+  font-size: 27px;
+
+}
+
+#splash-nav-ellipses-button:hover {
+  background-color: white;
+}
+
+.splash-nav-items li:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.splash-nav-ellipses-button:hover {
+  background-color: white;
+}
+
+.splash-nav-namespace-item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+
+.page-contents {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f8f8;
+}
+
+.session-form-errors {
+  margin: auto;
+   margin-top: 25px;
+   border: 1px solid lightgrey;
+   border-radius: 6px;
+   background-color: white;
+   width: 460px;
+   padding: 20px;
+   font-family: 'Lato', sans-serif;
+   border-left: 5px solid #e01e5a;
+}
+
+ .session-form {
+   margin: auto;
+   margin-top: 25px;
+   border: 1px solid lightgrey;
+   border-radius: 6px;
+   background-color: white;
+   width: 500px;
+   height: 375px;
+   text-align: center;
+   font-family: 'Lato', sans-serif;
+ }
+
+ .session-form h2 {
+   
+   font-size: 35px;
+   font-weight: 700;
+   margin: 10px;
+   margin-top: 30px;
+ }
+
+  .session-form h4 {
+   font-size: 15px;
+   font-weight: lighter;
+   margin: 15px;
+   color: #4f4e4e;
+ }
+
+ .session-form form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: #4f4e4e;
+   font-size: 15px;
+   font-weight: lighter;
+ }
+
+ .session-form input {
+   margin: auto;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   width: 60%;
+   height: 40px;
+   border: 1px solid grey;
+   border-radius: 4px;
+   font-size: 18px;
+ }
+
+ .session-form-submit {
+   -webkit-appearance: none;
+   margin: auto;
+   width: 300px;
+   height: 57px;
+   font-size: 35px;
+   font-weight: 600;
+   background-color: #007a5a;
+   border-radius: 4px;
+   color: white;
+   cursor: pointer;
+
+ }
+
+ .splash-nav-slack-logo {
+  height: 70px;
+  width: 150px;
+  background-image: image-url('slack-logo.jpeg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+ }
+
+.splash-nav-slack-logo:hover {
+  cursor: pointer;
+} 
+
+
+ .splash-nav-app-academy-logo {
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+  background-image: image-url('aa-logo.jpg');
+  background-size: contain;
+  background-position: center;
+
+ }
+
+ #account-dropdown {
+   display: none;
+   position: absolute;
+   left: 10px;
+   background-color: white;
+   border: 1px solid lightgrey;
+   border-radius: 4px;
+   color: black;
+   width: 300px;
+   height: 600px;
+   z-index: 2;
+   font-family: 'Lato', sans-serif;
+
+ }
+
+ #account-dropdown.show {
+   display: block;
+ }
+
+ .account-dropdown-user {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin: 20px;
+ }
+
+ .account-dropdown-user h3{
+   display: inline-block;
+   padding: 10px;
+   text-align: center;
+   font-size: 18px;
+   font-weight: bold;
+ }
+
+ .account-dropdown-profile-pic {
+  background-image: image-url('default-profile-picture.png');
+  height: 36px;
+  width: 36px;
+  border-radius: 4px;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+ }  
+
+ .account-dropdown-top-menu-options li {
+   display: flex;
+   align-items: center;
+   justify-content: left;
+   height: 26px;
+   padding-left: 20px;
+   
+
+ }
+
+ .account-dropdown-top-menu-options li:hover {
+   background-color: #1264a3;
+   color: white;
+   cursor: pointer;
+ }
+
+ .account-dropdown-top-menu-options {
+   padding-bottom: 10px;
+   border-bottom: 1px solid lightgray;
+ }
+
+ .account-dropdown-usage-items {
+   height: 200px;
+   border-bottom: 1px solid lightgray;
+ }
+
+ .account-dropdown-logout-items li {
+  display: flex;
+   align-items: center;
+   justify-content: left;
+   height: 26px;
+   padding-left: 20px;
+ }
+
+  .account-dropdown-logout-items li:hover {
+   background-color: #1264a3;
+   color: white;
+   cursor: pointer;
+ }
+
+ .sidebar-channel-list {
+   margin-top: 15px;
+   font-family: 'Lato', sans-serif;
+ }
+
+ .sidebar-channel-list li {
+   height: 26px;
+   display: flex;
+   align-items: center;
+   justify-content: left;
+   padding-left: 20px;
+ }
+
+ .sidebar-channel-list li:hover {
+   cursor: pointer;
+   background-color: #2e0a2d;
+ }
+
+.spacer {
+   height: 26px;
+   
+ }
