@@ -1,8 +1,13 @@
 {
   "name": "slack",
   "private": true,
+  "engines": {
+    "node": "11.12.0",
+    "npm": "6.7.0"
+  },
   "scripts": {
-    "webpack": "webpack --mode=development --watch"
+    "webpack": "webpack --mode=development --watch",
+    "postinstall": "webpack"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
