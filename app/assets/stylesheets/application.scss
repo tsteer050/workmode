@@ -81,7 +81,11 @@ body, html {height: 100%; }
 }
 
 .main-message-area {
-
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: flex-end;
+  flex-direction: column-reverse;
 }
 
 .login-with-default-button {
@@ -96,7 +100,7 @@ body, html {height: 100%; }
 .main-sidebar {
   background-color: #3f0e40;
   height: 100%;
-  width: 200px;
+  width: 220px;
   color: white;
 }
 
@@ -473,6 +477,11 @@ body, html {height: 100%; }
    padding-left: 20px;
  }
 
+  .channel-link {
+   color: inherit;
+   text-decoration: none;
+ }
+
  .sidebar-channel-list li:hover {
    cursor: pointer;
    background-color: #2e0a2d;
@@ -482,3 +491,53 @@ body, html {height: 100%; }
    height: 26px;
    
  }
+
+ .message-index-item {
+   margin-top: 8px;
+   display: flex;
+   flex-wrap: nowrap;
+   font-size: 15px;
+   font-family: 'Lato', sans-serif;
+   font-weight: normal;
+   width: 100%;
+ }
+
+  .message-index-item:hover {
+   background-color: lightgray;
+ }
+
+ .message-profile-pic-container {
+   width: 70px;
+ }
+
+ .message-username {
+   font-weight: 1000;
+   margin-right: 7px;
+   margin-bottom: 8px;
+ }
+
+ .message-body {
+   color: grey;
+ }
+
+ .textbox-area {
+   height: 66px;
+ }
+
+ .message-window {
+   width: 100%;
+   display: flex;
+   align-content: flex-end;
+   flex-direction: column;
+ }
+
+.message-timestamp {
+  color: #616061;
+  font-size: 12px;
+}
+
+.message-top-info {
+  display: flex;
+  align-items: center;
+}
+ 

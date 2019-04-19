@@ -3,9 +3,9 @@ import React from 'react';
 class AccountDropdown extends React.Component {
   constructor(props) {
     super(props);
+
   }
-
-
+  
   render() {
     return (
       <div id="account-dropdown">

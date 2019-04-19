@@ -1,0 +1,1 @@
+json.extract! membership, :id, :user_id, :channel_id, :last_message_id_seen
