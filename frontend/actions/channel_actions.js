@@ -1,10 +1,11 @@
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';
+export const SELECT_CHANNEL = 'SELECT_CHANNEL';
 import * as ChannelApiUtil from '../util/channel_api_util';
 
-const receiveChannel = (channel) => ({
+const receiveChannel = (payload) => ({
   type: RECEIVE_CHANNEL,
-  channel
+  payload
 });
 
 const receiveChannels = (payload) => ({
@@ -13,10 +14,19 @@ const receiveChannels = (payload) => ({
 });
 
 export const fetchChannel = (id) => dispatch => (
-  ChannelApiUtil.fetchChannel(id).then((channel) => dispatch(receiveChannel(channel)))
+  ChannelApiUtil.fetchChannel(id).then((payload) => dispatch(receiveChannel(payload)))
 );
 
 export const fetchChannels = () => dispatch => (
-  ChannelApiUtil.fetchChannels().then((channels) => dispatch(receiveChannels(channels)))
+  ChannelApiUtil.fetchChannels().then((payload) => dispatch(receiveChannels(payload)))
 );
 
+export const createDirectMessage = (channel, secondUserId) => dispatch => (
+  ChannelApiUtil.createDirectMessage(channel, secondUserId)
+    .then((channel) => dispatch(receiveChannel(channel)))
+);
+
+export const selectChannel = (id) => ({
+  type: SELECT_CHANNEL,
+  selected: id
+});

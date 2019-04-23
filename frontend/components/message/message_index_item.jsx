@@ -11,7 +11,7 @@ const MessageIndexItem = ({ message, users }) => {
   return (
     <div className="message-index-item">
       <div className="message-profile-pic-container">
-
+        <div className="message-profile-pic"/>
       </div>
       <div className="message-text">
         <div className="message-top-info">

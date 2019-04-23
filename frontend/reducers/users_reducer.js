@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_CHANNELS } from '../actions/channel_actions';
+import { RECEIVE_CHANNELS, RECEIVE_CHANNEL } from '../actions/channel_actions';
 import { merge } from 'lodash';
 
 export default (state = {}, action) => {
@@ -10,7 +10,9 @@ export default (state = {}, action) => {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, { [action.currentUser.id]: action.currentUser });
     case RECEIVE_CHANNELS:
-      return merge({}, state, action.payload.users)
+      return merge({}, state, action.payload.users);
+    case RECEIVE_CHANNEL:
+      return merge({}, state, action.payload.users);
     default:
       return state;
   }

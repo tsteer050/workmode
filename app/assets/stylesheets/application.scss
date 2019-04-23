@@ -78,6 +78,7 @@ body, html {height: 100%; }
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  position: relative;
 }
 
 .main-message-area {
@@ -520,15 +521,13 @@ body, html {height: 100%; }
    color: grey;
  }
 
- .textbox-area {
-   height: 66px;
- }
-
  .message-window {
    width: 100%;
    display: flex;
    align-content: flex-end;
    flex-direction: column;
+   padding-top: 4px;
+   padding-bottom: 4px;
  }
 
 .message-timestamp {
@@ -541,3 +540,168 @@ body, html {height: 100%; }
   align-items: center;
 }
  
+.message-profile-pic {
+  height: 36px;
+  width: 36px;
+  background-image: image-url('default-profile-picture.png');
+  border-radius: 4px;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  margin-left: 27px;
+}
+
+ .textbox-area {
+   height: 66px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   bottom: 0;
+   margin-top: 10px;
+ }
+
+.textbox-area form {
+  width: 100%;
+}
+
+.new-message-text-box {
+  border: 2px solid rgba(134,134,134,.7);
+  border-radius: 5px;
+  width: 95%;
+  height: 44px;
+  margin-bottom: 26px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.messages-container {
+  margin-bottom: 66px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.messages-index {
+  overflow-y: auto;
+}
+
+.channel-browse-modal {
+  display: none;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+
+}
+
+.sidebar-dm-list {
+  font-family: 'Lato', sans-serif;
+}
+
+.sidebar-dm-list li {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 20px;
+}
+
+
+.dm-browse-modal {
+  display: none;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.dm-browse-list-container {
+  border: 1px solid black;
+  width: 640px;
+  color: black;
+  margin: auto;
+}
+
+.close-modal-button {
+  border-radius: 100%;
+  width: 64px;
+  height: 64px;
+  color: #616061;
+  text-align: center;
+
+}
+
+.close-modal-button:hover {
+  cursor: pointer;
+  color: black;
+  background-color: rgb(209, 209, 209);
+}
+
+.close-modal-button h1 {
+  font-size: 30px;
+}
+
+.close-modal-button h2 {
+  font-size: 12.8px;
+}
+
+
+.show-modal {
+  display: block;
+}
+
+.dm-browse-button {
+  cursor: pointer;
+}
+
+.dm-browse-modal h1 {
+  font-size: 34px;
+  color: black;
+  text-align: center;
+}
+// /* The Modal (background) */
+// .modal {
+//   display: none; /* Hidden by default */
+//   position: fixed; /* Stay in place */
+//   z-index: 1; /* Sit on top */
+//   left: 0;
+//   top: 0;
+//   width: 100%; /* Full width */
+//   height: 100%; /* Full height */
+//   overflow: auto; /* Enable scroll if needed */
+//   background-color: rgb(0,0,0); /* Fallback color */
+//   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+// }
+
+// /* Modal Content/Box */
+// .modal-content {
+//   background-color: #fefefe;
+//   margin: 15% auto; /* 15% from the top and centered */
+//   padding: 20px;
+//   border: 1px solid #888;
+//   width: 80%; /* Could be more or less, depending on screen size */
+// }
+
+// /* The Close Button */
+// .close {
+//   color: #aaa;
+//   float: right;
+//   font-size: 28px;
+//   font-weight: bold;
+// }
+
+// .close:hover,
+// .close:focus {
+//   color: black;
+//   text-decoration: none;
+//   cursor: pointer;
+// }

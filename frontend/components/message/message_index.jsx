@@ -8,6 +8,8 @@ class MessageIndex extends React.Component {
   }
 
   render() {
+    if (this.props.loading) return <div></div>;
+
     let messages = this.props.messages.map((message) => {
       return(
         <li key={message.id}>
@@ -16,8 +18,10 @@ class MessageIndex extends React.Component {
       )
     });
 
+   
+
     return (
-      <div>
+      <div className="messages-index">
         <ul>
           {messages}
         </ul>

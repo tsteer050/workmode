@@ -1,6 +1,7 @@
 import React from 'react';
 import AccountDropdownContainer from './account dropdown/account_dropdown_container';
 import ChannelListContainer from './channellist/channel_list_container';
+import DMListContainer from './direct messages/dm_list_container';
 
 class Sidebar extends React.Component {
 
@@ -27,7 +28,10 @@ class Sidebar extends React.Component {
 
 
   componentDidMount() {
-    this.props.fetchChannels();
+
+    this.props.fetchChannels()
+      .then((action) => this.props.selectChannel(Object.keys(action.payload.channels)[0]))
+      .then((action) => this.props.history.push(`/channels/${action.selected}`));
     document.addEventListener('click', this.handler);
 
   }
@@ -68,7 +72,7 @@ class Sidebar extends React.Component {
           </div>
         </div>
         <ChannelListContainer />
-        
+        <DMListContainer />
       </div>
     );
   };
