@@ -38,5 +38,11 @@ export const allDirectMessagesOfUser = (state, userId) => {
   return directMessages;
 };
 
+export const generateDirectMessageName = (state, channelId, currentUserId) => {
+  const memberships = Object.values(state.entities.memberships).filter((membership) => membership.channel_id == channelId);
+  const nonCurrentMember = Object.values(memberships).filter((membership) => membership.user_id != currentUserId);
+  const user = state.entities.users[nonCurrentMember[0].user_id];
+  return user.username;
+}
 
 

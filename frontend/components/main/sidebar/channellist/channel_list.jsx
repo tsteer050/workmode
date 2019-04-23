@@ -1,5 +1,5 @@
 import React from 'react';
-import ChannelListItem from './channel_list_item';
+import ChannelListItemContainer from './channel_list_item_container';
 import ChannelBrowseContainer from './channel_browse_container';
 
 
@@ -18,7 +18,7 @@ class ChannelList extends React.Component {
   render() {
     let nonDirect = this.props.channels.filter((channel) => channel.is_direct_message === false);
     let channels = nonDirect.map((channel) => {
-      return <ChannelListItem channelClass="channel-link" currentUserId={this.props.currentUserId} users={this.props.users} members={this.props.members} selectChannel={this.props.selectChannel} key={channel.id} channel={channel}/>
+      return <ChannelListItemContainer channelClass="channel-link" key={channel.id} channel={channel}/>
     });
 
     return (

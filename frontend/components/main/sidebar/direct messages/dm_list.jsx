@@ -1,5 +1,5 @@
 import React from 'react';
-import ChannelListItem from '../channellist/channel_list_item';
+import ChannelListItemContainer from '../channellist/channel_list_item_container';
 import NewDMBrowseContainer from './new_dm_browse_container';
 
 
@@ -16,9 +16,9 @@ class DMList extends React.Component {
   }
 
   render() {
-    debugger
+
     let directMessages = this.props.directMessages.map((channel) => {
-      return <ChannelListItem channelClass="channel-link" selectChannel={this.props.selectChannel} key={channel.id} channel={channel} />
+      return <ChannelListItemContainer channelClass="channel-link" key={channel.id} channel={channel} />
     });
 
     return (
