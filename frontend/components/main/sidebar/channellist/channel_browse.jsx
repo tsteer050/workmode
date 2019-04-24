@@ -21,20 +21,21 @@ class ChannelBrowse extends React.Component {
   render() {
 
     let nonMemberChannels = this.props.nonMemberChannels.map((channel) => {
-      return <ChannelListItem selectChannel={this.handleAddChannel} key={channel.id} channel={channel} />
+      return <ChannelListItem selectChannel={this.handleAddChannel} channelClass="channel-browse-item" title={channel.title} key={channel.id} channel={channel} />
     });
 
     return (
       <div id="channel-browse-modal" className="channel-browse-modal">
-        <div>About channels...</div>
+        <div id="about-channels">&#9432;    About channels...</div>
         <div className="close-modal-button" onClick={this.props.handleClick}>
           <h1>X</h1>
           <h2>esc</h2>
         
         </div>
-        <h1>Browse channels</h1>
+        <h1 id="channel-browse-title">Browse channels</h1>
         <div className="channel-browse-list-container">
           <ul>
+            <li id="channel-browse-first-item">Channels you can join</li>
             {nonMemberChannels}
           </ul>
         </div>

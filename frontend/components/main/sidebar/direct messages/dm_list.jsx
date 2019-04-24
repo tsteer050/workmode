@@ -24,7 +24,7 @@ class DMList extends React.Component {
     return (
       <div className="sidebar-dm-list">
         <ul>
-          <li></li>
+          <li className="spacer"></li>
           <li className="dm-browse-button" onClick={this.toggleDMModal}>
             Direct Messages
           </li>
@@ -32,7 +32,7 @@ class DMList extends React.Component {
              <NewDMBrowseContainer closeDMModal={this.toggleDMModal} />
           </li>
             {directMessages}
-          <li></li>
+          <li className="spacer"></li>
         </ul>
 
       </div>

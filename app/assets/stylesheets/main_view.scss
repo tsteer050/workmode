@@ -1,0 +1,111 @@
+
+.main-view {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.main-message-area {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: flex-end;
+  flex-direction: column-reverse;
+}
+
+ .message-index-item {
+   margin-top: 8px;
+   display: flex;
+   flex-wrap: nowrap;
+   font-size: 15px;
+   font-family: 'Lato', sans-serif;
+   font-weight: normal;
+   width: 100%;
+ }
+
+  .message-index-item:hover {
+   background-color: lightgray;
+ }
+
+ .message-profile-pic-container {
+   width: 70px;
+ }
+
+ .message-username {
+   font-weight: 1000;
+   margin-right: 7px;
+   margin-bottom: 8px;
+ }
+
+ .message-body {
+   color: grey;
+ }
+
+ .message-window {
+   width: calc(100vw - 220px);
+   display: flex;
+   align-content: flex-end;
+   flex-direction: column;
+   padding-top: 4px;
+   padding-bottom: 4px;
+ }
+
+.message-timestamp {
+  color: #616061;
+  font-size: 12px;
+}
+
+.message-top-info {
+  display: flex;
+  align-items: center;
+}
+ 
+.message-profile-pic {
+  height: 36px;
+  width: 36px;
+  background-image: image-url('default-profile-picture.png');
+  border-radius: 4px;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  margin-left: 27px;
+}
+
+ .textbox-area {
+   height: 66px;
+   width: calc(100vw - 220px);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   bottom: 0;
+   margin-top: 10px;
+ }
+
+.textbox-area form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.new-message-text-box {
+  border: 2px solid rgba(134,134,134,.7);
+  border-radius: 5px;
+  width: 92%;
+  height: 44px;
+  margin-bottom: 26px;
+
+}
+
+.messages-container {
+  margin-bottom: 66px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.messages-index {
+  overflow-y: auto;
+}

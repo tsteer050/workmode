@@ -28,7 +28,7 @@ class ChannelList extends React.Component {
             Channels
           </li>
           {channels}
-          <li></li>
+          <li className="spacer"></li>
           <li className="channel-add-button" onClick={this.handleClick}>+ Add a channel</li>
         </ul>
         <ChannelBrowseContainer handleClick={this.handleClick}/>

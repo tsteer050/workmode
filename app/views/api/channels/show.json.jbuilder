@@ -4,9 +4,13 @@ end
 
 
 json.memberships do 
-
-  json.partial! 'membership', membership: @currentUserMembership
-  json.partial! 'membership', membership: @secondUserMembership
+  json.set! @current_user_membership.id do 
+    json.partial! 'membership', membership: @current_user_membership
+  end
+  
+  json.set! @second_user_membership.id do 
+    json.partial! 'membership', membership: @second_user_membership
+  end
 
 end
 

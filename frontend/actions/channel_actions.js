@@ -3,7 +3,7 @@ export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';
 export const SELECT_CHANNEL = 'SELECT_CHANNEL';
 import * as ChannelApiUtil from '../util/channel_api_util';
 
-const receiveChannel = (payload) => ({
+export const receiveChannel = (payload) => ({
   type: RECEIVE_CHANNEL,
   payload
 });

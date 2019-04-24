@@ -2,13 +2,16 @@ import React from 'react';
 import AccountDropdownContainer from './account dropdown/account_dropdown_container';
 import ChannelListContainer from './channellist/channel_list_container';
 import DMListContainer from './direct messages/dm_list_container';
+import Cable from '../../socket/cable.js';
+import { ActionCable } from 'react-actioncable-provider';
 
 class Sidebar extends React.Component {
 
   constructor(props) {
     super(props);
     this.getMemberChannels = this.getMemberChannels.bind(this);
-    
+    this.handleReceivedChannel = this.handleReceivedChannel.bind(this);
+    this.handleReceivedMessage = this.handleReceivedMessage.bind(this);
   }
 
   handler(event) {
@@ -54,12 +57,31 @@ class Sidebar extends React.Component {
     return channels;
   }
 
+  handleReceivedChannel(response) {
+    this.props.receiveChannel(response);
+  };
+
+  handleReceivedMessage(response) {
+    this.props.receiveMessage(response);
+  };
+
 
   render() {
-
-
     return (
       <div className="main-sidebar">
+
+        <ActionCable
+               channel={{ channel: 'ChannelsChannel' }}
+          onReceived={this.handleReceivedChannel}
+        />
+
+        {Object.values(this.props.channels).length ? (
+          <Cable
+            channels={Object.values(this.props.channels)}
+            handleReceivedMessage={this.handleReceivedMessage}
+          />
+        ) : null}
+
         <div className="sidebar-account-main">
           <button id="sidebar-username-tab" className="sidebar-username-tab" onClick={this.handleDropdownClick}>
             <h3>App Academy &#709;</h3>

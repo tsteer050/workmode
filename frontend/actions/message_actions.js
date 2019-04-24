@@ -4,7 +4,7 @@ export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
 import * as MessageApiUtil from '../util/message_api_util';
 
 
-const receiveMessage = (message) => ({
+export const receiveMessage = (message) => ({
   type: RECEIVE_MESSAGE,
   message
 });

@@ -1,0 +1,82 @@
+
+.session-form-errors {
+  margin: auto;
+   margin-top: 25px;
+   border: 1px solid lightgrey;
+   border-radius: 6px;
+   background-color: white;
+   width: 460px;
+   padding: 20px;
+   font-family: 'Lato', sans-serif;
+   border-left: 5px solid #e01e5a;
+}
+
+ .session-form {
+   margin: auto;
+   margin-top: 25px;
+   border: 1px solid lightgrey;
+   border-radius: 6px;
+   background-color: white;
+   width: 500px;
+   height: 375px;
+   text-align: center;
+   font-family: 'Lato', sans-serif;
+ }
+
+ .session-form h2 {
+   
+   font-size: 35px;
+   font-weight: 700;
+   margin: 10px;
+   margin-top: 30px;
+ }
+
+  .session-form h4 {
+   font-size: 15px;
+   font-weight: lighter;
+   margin: 15px;
+   color: #4f4e4e;
+ }
+
+ .session-form form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: #4f4e4e;
+   font-size: 15px;
+   font-weight: lighter;
+ }
+
+ .session-form input {
+   margin: auto;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   width: 60%;
+   height: 40px;
+   border: 1px solid grey;
+   border-radius: 4px;
+   font-size: 18px;
+ }
+
+ .session-form-submit {
+   -webkit-appearance: none;
+   margin: auto;
+   width: 300px;
+   height: 57px;
+   font-size: 35px;
+   font-weight: 600;
+   background-color: #007a5a;
+   border-radius: 4px;
+   color: white;
+   cursor: pointer;
+
+ }
+
+ .login-with-default-button {
+  color: blue;
+  text-decoration: underline;
+}
+
+.login-with-default-button:hover {
+  cursor: pointer;
+}

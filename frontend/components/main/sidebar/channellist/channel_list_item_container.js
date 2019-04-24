@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return ({
     title,
+    selectedChannelId: state.ui.selected
 
   });
 

@@ -8,18 +8,29 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.new(channel_params)
     if @channel.save 
 
-      @currentUserMembership = Membership.new({
+      @current_user_membership = Membership.new({
         user_id: current_user.id,
         channel_id: @channel.id
       })
-      @currentUserMembership.save 
+      @current_user_membership.save!
 
-      @secondUserMembership = Membership.new({
+      @second_user_membership = Membership.new({
         user_id: params[:secondUserId],
         channel_id: @channel.id
       })
-      @secondUserMembership.save 
-      render :show
+      @second_user_membership.save!
+
+     
+
+      data = render_to_string :show
+      serialized_data = JSON.parse(data)
+      # ActiveModelSerializers::Adapter::Json.new(
+      #   ChannelSerializer.new(@channel)
+      #   ).serializable_hash
+      ActionCable.server.broadcast 'channels_channel', serialized_data
+      head :ok
+
+
     else
 
     end

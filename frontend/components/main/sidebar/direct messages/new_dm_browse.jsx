@@ -35,7 +35,8 @@ class NewDMBrowse extends React.Component {
           <h1>X</h1>
           <h2>esc</h2>
         </div>
-        <h1>Direct Messages</h1>
+        <h1 id="dm-title">Direct Messages</h1>
+        <h5>Related users</h5>
         <div className="dm-browse-list-container">
           <ul>
             {otherUsers}

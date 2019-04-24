@@ -1,0 +1,188 @@
+
+.main-sidebar {
+  background-color: #3f0e40;
+  height: 100%;
+  width: 220px;
+  color: white;
+}
+
+.show-account-info-button {
+  height: 100%;
+  width: 100%;
+  display: hidden;
+}
+
+.sidebar-username-tab {
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  background-color: #3f0e40;
+  color: white;
+  border: none;
+  padding: 13px;
+  height: 60px;
+  text-align: left;
+}
+
+.sidebar-username-tab h3 {
+  
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+.sidebar-username-tab h4 {
+  color: #148f72;
+  font-size: 22px;
+  display: inline-block;
+}
+
+.sidebar-username-tab h5 {
+  color: #AB9BA9;
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.sidebar-username-tab:hover {
+  cursor: pointer;
+  background-color: #2e0a2d;
+}
+
+
+ #account-dropdown {
+   display: none;
+   position: absolute;
+   left: 10px;
+   background-color: white;
+   border: 1px solid lightgrey;
+   border-radius: 4px;
+   color: black;
+   width: 300px;
+   height: 600px;
+   z-index: 2;
+   font-family: 'Lato', sans-serif;
+
+ }
+
+ #account-dropdown.show {
+   display: block;
+ }
+
+ .account-dropdown-user {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin: 20px;
+ }
+
+ .account-dropdown-user h3{
+   display: inline-block;
+   padding: 10px;
+   text-align: center;
+   font-size: 18px;
+   font-weight: bold;
+ }
+
+ .account-dropdown-profile-pic {
+  background-image: image-url('default-profile-picture.png');
+  height: 36px;
+  width: 36px;
+  border-radius: 4px;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+ }  
+
+ .account-dropdown-top-menu-options li {
+   display: flex;
+   align-items: center;
+   justify-content: left;
+   height: 26px;
+   padding-left: 20px;
+   
+
+ }
+
+ .account-dropdown-top-menu-options li:hover {
+   background-color: #1264a3;
+   color: white;
+   cursor: pointer;
+ }
+
+ .account-dropdown-top-menu-options {
+   padding-bottom: 10px;
+   border-bottom: 1px solid lightgray;
+ }
+
+ .account-dropdown-usage-items {
+   height: 200px;
+   border-bottom: 1px solid lightgray;
+ }
+
+ .account-dropdown-logout-items li {
+  display: flex;
+   align-items: center;
+   justify-content: left;
+   height: 26px;
+   padding-left: 20px;
+ }
+
+  .account-dropdown-logout-items li:hover {
+   background-color: #1264a3;
+   color: white;
+   cursor: pointer;
+ }
+
+ .sidebar-channel-list {
+   margin-top: 15px;
+   font-family: 'Lato', sans-serif;
+ }
+
+ .sidebar-channel-list li {
+   height: 26px;
+   display: flex;
+   align-items: center;
+   justify-content: left;
+   padding-left: 20px;
+ }
+
+  .channel-link {
+   color: inherit;
+   text-decoration: none;
+ }
+
+ .channel-list-li:hover {
+   cursor: pointer;
+   background-color: #2e0a2d;
+ }
+
+ .spacer {
+   height: 26px; 
+ }
+
+ .spacer:hover {
+   cursor: default;
+ }
+
+.sidebar-dm-list {
+  font-family: 'Lato', sans-serif;
+}
+
+.sidebar-dm-list li {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 20px;
+}
+
+.dm-browse-modal h1:hover {
+  cursor: pointer;
+}
+
+.sidebar-dm-list li:hover {
+  cursor: pointer;
+}
+
+.selected-channel {
+  background-color: #1164A3!important;
+}
