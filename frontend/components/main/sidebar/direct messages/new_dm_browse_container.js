@@ -5,7 +5,7 @@ import { allUsersOfMemberChannels } from '../../../../reducers/selectors';
 
 const mapStateToProps = state => ({
   users: allUsersOfMemberChannels(state, state.session.currentUser),
-  currentUser: state.entities.users[state.session.currentUser]
+  currentUser: state.entities.users[state.session.currentUser],
 });
 
 const mapDispatchToProps = dispatch => ({

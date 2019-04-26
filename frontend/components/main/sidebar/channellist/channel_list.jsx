@@ -10,16 +10,21 @@ class ChannelList extends React.Component {
 
   }
 
-  handleClick() {
-    let modal = document.getElementById('channel-browse-modal');
-    modal.classList.toggle("show-modal");
-  }
+  // handleClick() {
+  //   let modal = document.getElementById('channel-browse-modal');
+  //   modal.classList.toggle("show-modal");
+  // }
 
   render() {
     let nonDirect = this.props.channels.filter((channel) => channel.is_direct_message === false);
     let channels = nonDirect.map((channel) => {
       return <ChannelListItemContainer channelClass="channel-link" key={channel.id} channel={channel}/>
     });
+
+    let channelListModal = null;
+    if (this.props.channelListModalRenders) {
+      channelListModal = <ChannelBrowseContainer handleClick={this.props.toggleChannelListModal} />
+    }
 
     return (
       <div className="sidebar-channel-list">
@@ -29,9 +34,9 @@ class ChannelList extends React.Component {
           </li>
           {channels}
           <li className="spacer"></li>
-          <li className="channel-add-button" onClick={this.handleClick}>+ Add a channel</li>
+          <li className="channel-add-button" onClick={this.props.toggleChannelListModal}>+ Add a channel</li>
         </ul>
-        <ChannelBrowseContainer handleClick={this.handleClick}/>
+        {channelListModal}
       </div>
     )
   }

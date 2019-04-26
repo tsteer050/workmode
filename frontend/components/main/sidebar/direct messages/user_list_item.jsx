@@ -1,9 +1,8 @@
 import React from 'react';
 
-const UserListItem = ({ user, currentUser, handleDMCreate }) => {
-
+const UserListItem = ({ user, currentUser, handleDMCreate, handler }) => {
   return (
-    <li onClick={() => handleDMCreate(currentUser, user)}>
+    <li onClick={handler}>
       <div className="user-list-profile-pic" />
       <div >
         {user.username}
@@ -13,3 +12,6 @@ const UserListItem = ({ user, currentUser, handleDMCreate }) => {
 };
 
 export default UserListItem;
+
+
+// () => handleDMCreate(currentUser, user)

@@ -150,3 +150,36 @@
   background-position: center;
 
 }
+
+.splash-image-window-1 {
+  background-image: image-url('slack-main-pic-1.jpg');
+  background-size: contain;
+  background-position: center;
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  left: 200px;
+  top: 120px;
+}
+
+.splash-image-window-2 {
+  background-image: image-url('slack-main-pic-2.jpg');
+  background-size: contain;
+  background-position: center;
+  height: 490px;
+  width: 490px;
+  position: absolute;
+  left: 320px;
+  top: 190px;
+}
+
+.splash-image-window-3 {
+  background-image: image-url('slack-main-pic-3.jpg');
+  background-size: contain;
+  background-position: center;
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  left: 870px;
+  top: 350px;
+}

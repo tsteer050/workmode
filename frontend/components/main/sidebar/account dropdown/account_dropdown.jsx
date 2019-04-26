@@ -23,7 +23,21 @@ class AccountDropdown extends React.Component {
           </ul>
         </div>
         <div className="account-dropdown-usage-items">
-
+          <div className="account-dropdown-usage-namespace-info">
+            <div className="namespace-icon"></div>
+            <div className="account-dropdown-usage-namespace-text">
+              <h3>App Academy</h3>
+              <h5>app-academy.slack.com</h5>
+            </div>
+          </div>
+          <h4>Your workspace is currently on Slack's free plan.  See upgrate options</h4>
+          <div className="account-usage-details">
+            <div className="account-usage-details-text">
+              <h3>Total messages</h3>
+              <h5>Upgrate to access all of your messages</h5>
+            </div>
+            <div className="account-usage-amount-number">4.2m</div>
+          </div>
         </div>
         <div className="account-dropdown-logout-items">
           <ul>

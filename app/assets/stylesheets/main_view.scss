@@ -13,6 +13,7 @@
   display: flex;
   align-content: flex-end;
   flex-direction: column-reverse;
+  margin-bottom: 10px;
 }
 
  .message-index-item {
@@ -81,7 +82,6 @@
    justify-content: center;
    position: fixed;
    bottom: 0;
-   margin-top: 10px;
  }
 
 .textbox-area form {
@@ -108,4 +108,9 @@
 
 .messages-index {
   overflow-y: auto;
+}
+
+.top-bar {
+  height: 53px;
+  border-bottom: 1px solid #ddd;
 }

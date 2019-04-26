@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   if (ownProps.channel.is_direct_message === true) {
     title = generateDirectMessageName(state, ownProps.channel.id, state.session.currentUser);
   } else {
-    title = ownProps.channel.title;
+    title = '# ' + ownProps.channel.title;
   }
 
   return ({

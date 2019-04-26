@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import MessageForm from './message_form';
 import { createMessage } from '../../actions/message_actions';
+import { generateDirectMessageName } from '../../reducers/selectors';
 
 const mapStateToProps = (state, { match } ) => {
 
@@ -16,7 +17,11 @@ const mapStateToProps = (state, { match } ) => {
   let channelTitle;
 
   if (state.entities.channels[channelId]) {
-    channelTitle = state.entities.channels[channelId].title;
+    if (state.entities.channels[channelId].is_direct_message) {
+      channelTitle = generateDirectMessageName(state, channelId, state.session.currentUser);
+    } else {
+      channelTitle = '# ' + state.entities.channels[channelId].title;
+    }
   } else {
     channelTitle = '';
   }

@@ -15,6 +15,12 @@ class Splash extends React.Component {
     ) : (
         <div className="splash-main">
           <h1>Imagine what you'll accomplish together</h1>
+          <div className='splash-image-window-1'></div>
+          <div className='splash-image-window-2'></div>
+          <div className='splash-image-window-3'></div>
+
+
+
           <div className="splash-description">
             <p>Slack is a collaboration hub for work, no matter what work you do.
             It’s a place where conversations happen, decisions are made, and

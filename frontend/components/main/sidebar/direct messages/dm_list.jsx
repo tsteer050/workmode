@@ -10,26 +10,30 @@ class DMList extends React.Component {
 
   }
 
-  toggleDMModal() {
-    let modal = document.getElementById('dm-browse-modal');
-    modal.classList.toggle("show-modal");
-  }
+  // toggleDMModal() {
+  //   let modal = document.getElementById('dm-browse-modal');
+  //   modal.classList.toggle("show-modal");
+  // }
 
   render() {
 
     let directMessages = this.props.directMessages.map((channel) => {
       return <ChannelListItemContainer channelClass="channel-link" key={channel.id} channel={channel} />
     });
+    let dmModal = null;
+    if (this.props.dmModalRenders) {
+      dmModal = <NewDMBrowseContainer closeDMModal={this.props.toggleDMModal} />
+    }
 
     return (
       <div className="sidebar-dm-list">
         <ul>
           <li className="spacer"></li>
-          <li className="dm-browse-button" onClick={this.toggleDMModal}>
-            Direct Messages
+          <li className="dm-browse-button" onClick={this.props.toggleDMModal}>
+            Direct Messages <i className="fas fa-plus-circle"></i>
           </li>
           <li className="dms-add-button">
-             <NewDMBrowseContainer closeDMModal={this.toggleDMModal} />
+             {dmModal}
           </li>
             {directMessages}
           <li className="spacer"></li>

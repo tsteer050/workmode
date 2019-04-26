@@ -1,0 +1,39 @@
+.top-bar-left-section {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+  cursor: default;
+}
+
+.top-bar-left-section h3 {
+  font-size: 18px;
+  font-weight: 1000;
+}
+
+.top-bar-left-section h3:hover {
+  cursor: pointer;
+}
+
+.top-bar-left-section-lower {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  color: #606160;
+  font-size: 13px;
+}
+
+.top-bar-left-section-lower i {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.top-bar-left-section-lower i:hover {
+  color: #f2c744;
+  cursor: pointer;
+}
+
+.top-bar-divider {
+  margin-left: 5px;
+  margin-right: 5px;
+}

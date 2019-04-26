@@ -37,6 +37,7 @@ class Sidebar extends React.Component {
       .then((action) => this.props.history.push(`/channels/${action.selected}`));
     document.addEventListener('click', this.handler);
 
+    this.props.setModals();
   }
 
   componentWillUnmount() {
@@ -84,7 +85,7 @@ class Sidebar extends React.Component {
 
         <div className="sidebar-account-main">
           <button id="sidebar-username-tab" className="sidebar-username-tab" onClick={this.handleDropdownClick}>
-            <h3>App Academy &#709;</h3>
+            <h3>App Academy &#709;<i className="far fa-bell"></i></h3>
               <h3></h3>
               <h4>&#8226;</h4>
               <h5>{this.props.currentUser.username}</h5>

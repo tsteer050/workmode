@@ -21,7 +21,7 @@ class ChannelBrowse extends React.Component {
   render() {
 
     let nonMemberChannels = this.props.nonMemberChannels.map((channel) => {
-      return <ChannelListItem selectChannel={this.handleAddChannel} channelClass="channel-browse-item" title={channel.title} key={channel.id} channel={channel} />
+      return <ChannelListItem selectChannel={this.handleAddChannel} channelClass="channel-browse-item" title={`# ${channel.title}`} key={channel.id} channel={channel} />
     });
 
     return (

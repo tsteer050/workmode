@@ -1,5 +1,5 @@
 import React from 'react';
-import UserListItem from './user_list_item';
+import UserListItemContainer from './user_list_item_container';
 
 
 class NewDMBrowse extends React.Component {
@@ -21,11 +21,13 @@ class NewDMBrowse extends React.Component {
   render() {
 
     let otherUsers = this.props.users.map((user) => {
-      return <UserListItem 
+      return <UserListItemContainer
         handleDMCreate={this.handleDMCreate}
         key={user.id} 
         user={user} 
         currentUser={this.props.currentUser}
+        closeDMModal={this.props.closeDMModal}
+        selectChannel={this.props.selectChannel}
         />
     });
 
