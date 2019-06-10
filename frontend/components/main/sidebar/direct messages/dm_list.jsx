@@ -16,7 +16,7 @@ class DMList extends React.Component {
   // }
 
   render() {
-
+    
     let directMessages = this.props.directMessages.map((channel) => {
       return <ChannelListItemContainer channelClass="channel-link" key={channel.id} channel={channel} />
     });

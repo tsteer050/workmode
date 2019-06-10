@@ -10,17 +10,24 @@ Channel.destroy_all
 Membership.destroy_all
 Message.destroy_all
 
-u1 = User.create({ username: "Joe Example", email: "example@testing.com", password_digest: "$2a$10$NUcC1WUHew0KodvdRRF5keWYMM3J1FODOEFEEnNBnMKKqr5KpRCIe", session_token: "iQrynmJf63Viws4fDMTw8Q" })
-u2 = User.create({ username: "Francis Testperson", email: "frank@testing.com", password_digest: "$2a$10$G0grCgBRtHbeDy8RqEjjE.Cg33Isjhz.0.N3fMIioC6KfmUJ09lai", session_token: "XL_CWkNbQn8E-z_863bASw" })
-u3 = User.create({ username: "Elaine Fakename", email: "elaine@testing.com", password_digest: "$2a$10$O.8qHkVJvXscev6GakqJqefVT0DCTA6.6MNLrdoVNHUBvgjBekGgu", session_token: "gWGIXChrXhnmbIhIgQGdAw" })
-u4 = User.create({ username: "Empty", email: "empty@testing.com", password_digest: "$2a$10$yFpbqfcsm46SvgV2Y.H09.wRAXyGmY2SwO3qOFNU7gJBOOhLYiTli", session_token: "AEw4pPCrqFVi21LXpI72LA" })
+u1 = User.create({ username: "Joe Example", email: "example@testing.com", password_digest: "$2a$10$NUcC1WUHew0KodvdRRF5keWYMM3J1FODOEFEEnNBnMKKqr5KpRCIe", session_token: "iQrynmJf63Viws4fDMTw8Q", photo_url: "https://amp.businessinsider.com/images/5899ffcf6e09a897008b5c04-750-750.jpg" })
+u2 = User.create({ username: "Francis Testperson", email: "frank@testing.com", password_digest: "$2a$10$G0grCgBRtHbeDy8RqEjjE.Cg33Isjhz.0.N3fMIioC6KfmUJ09lai", session_token: "XL_CWkNbQn8E-z_863bASw", photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0cnnoTFkdWionW_grl1ZaHSPFMVcuBz53n91ym59PJ6TjdkQa7A" })
+u3 = User.create({ username: "Elaine Fakename", email: "elaine@testing.com", password_digest: "$2a$10$O.8qHkVJvXscev6GakqJqefVT0DCTA6.6MNLrdoVNHUBvgjBekGgu", session_token: "gWGIXChrXhnmbIhIgQGdAw", photo_url: "https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg" })
+u4 = User.create({ username: "Maria Samplehuman", email: "maria@testing.com", password_digest: "$2a$10$yFpbqfcsm46SvgV2Y.H09.wRAXyGmY2SwO3qOFNU7gJBOOhLYiTli", session_token: "AEw4pPCrqFVi21LXpI72LA", photo_url: "https://annemariesegal.files.wordpress.com/2017/04/adobestock_86346713-cropped-young-woman-in-suit.jpg?w=640" })
 
 
 
-c1 = Channel.create({ title: "2019-01-07-online", is_direct_message: false })
+c1 = Channel.create({ title: "Example Main Channel", is_direct_message: false })
 c2 = Channel.create({ title: "Curling Enthusiasts", is_direct_message: false })
 c3 = Channel.create({ title: "General", is_direct_message: false })
-c4 = Channel.create({ title: "Example!", is_direct_message: false })
+c4 = Channel.create({ title: "Current Events", is_direct_message: false })
+c5 = Channel.create({ title: "Archery Discussion", is_direct_message: false })
+c6 = Channel.create({ title: "Web Socket Fanclub", is_direct_message: false })
+c7 = Channel.create({ title: "Action Cable & Adventure", is_direct_message: false })
+c8 = Channel.create({ title: "Web Development", is_direct_message: false })
+
+
+
 
 
 Membership.create({ user: u1, channel: c1 })
@@ -31,7 +38,7 @@ Membership.create({ user: u3, channel: c2 })
 
 Membership.create({ user: u2, channel: c3 })
 Membership.create({ user: u3, channel: c3 })
-
+Membership.create({ user: u4, channel: c3 })
 
 Membership.create({ user: u2, channel: c4 })
 Membership.create({ user: u3, channel: c4 })

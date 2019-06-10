@@ -11,7 +11,10 @@ const MessageIndexItem = ({ message, users }) => {
   return (
     <div className="message-index-item">
       <div className="message-profile-pic-container">
-        <div className="message-profile-pic"/>
+        <div className="message-profile-pic" 
+          style={{
+            backgroundImage: "url(" + users[message.author_id].photo_url + ")",
+          }}/>
       </div>
       <div className="message-text">
         <div className="message-top-info">

@@ -22,10 +22,10 @@ class Splash extends React.Component {
 
 
           <div className="splash-description">
-            <p>Slack is a collaboration hub for work, no matter what work you do.
+            <p>Workmode is a collaboration hub for work, no matter what work you do.
             It’s a place where conversations happen, decisions are made, and
             information is always at your fingertips.</p>
-            <p>Try Slack with your team for free</p>
+            <p>Try Workmode with your team for free</p>
           </div>
           <div className="splash-auth-links">
             <Link to="/signup" className="splash-signup-call-link"><button className="get-started-button" type="button">GET STARTED</button></Link>

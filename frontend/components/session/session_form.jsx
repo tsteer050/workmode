@@ -52,34 +52,35 @@ class SessionForm extends React.Component {
     
   }
 
-  render() {
+  generateTitle() {
     let title;
     if (this.props.formType === 'login') {
-      title = ( 
-      <div>
-        <h2>Sign in to Slack</h2>
-        <h4>Enter your login information</h4>
-      </div>
+      title = (
+        <div>
+          <h2>Sign in to Workmode</h2>
+          <h4>Enter your login information</h4>
+        </div>
       );
     } else {
       title = (
         <div>
-          <h2>Sign up for Slack</h2>
+          <h2>Sign up for Workmode</h2>
           <h4>Enter your information</h4>
         </div>
       );
     }
+    return title;
+  }
 
 
-
-
+  render() {
 
     return (
       <div>
           {this.renderErrors()}
         
         <div className="session-form">
-          {title}
+          {this.generateTitle()}
           <form onSubmit={this.handleSubmit}>
 
             <input className="session-form-username" placeholder="Username" type="text" value={this.state.username} onChange={this.handleInput('username')} />
@@ -92,6 +93,7 @@ class SessionForm extends React.Component {
 
             <input className="session-form-submit" type="submit" value="Continue   &#8594;" />
           </form>
+          
           <div className="login-with-default-button" onClick={this.loginDefault}>Login with default user</div>
         </div>
       </div>

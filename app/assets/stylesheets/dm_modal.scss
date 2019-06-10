@@ -59,7 +59,7 @@
   color:  #616061;
 }
 
-.dm-browse-list-container li:hover {
+.dm-browse-item:hover {
   cursor: pointer;
   background: #e8f5fa!important;
   border: 1px solid #c7e6f4!important;
@@ -69,11 +69,18 @@
 .user-list-profile-pic {
   height: 36px;
   width: 36px;
-  background-image: image-url('default-profile-picture.png');
+  // background-image: image-url('default-profile-picture.png');
   border-radius: 4px;
   background-size: contain;
   background-position: center;
   display: inline-block;
 
   margin-right: 8px;
+}
+
+#dm-browse-first-item {
+  height: 32px!important;
+  color: #616061;
+  font-size: 14px;
+  background-color: #F8F8F8;
 }
