@@ -12,12 +12,15 @@ class SplashNav extends React.Component {
 
     return (
       <div className="splash-nav">
-        <Link to="/" className="splash-nav-slack-logo" />
+        <Link to="/" className="workmode-title"> 
+          <h2 className="workmode-title-text w">W</h2>
+          <h2 className="workmode-title-text">orkmode</h2>
+        </Link>
         <ul className="splash-nav-items">
           <li>
-            <p>Product</p>
+            <Link to="/about" className="about-link">About</Link>
           </li>
-          <li>
+          {/* <li>
             <p>Pricing</p>
           </li>
           <li>
@@ -29,7 +32,7 @@ class SplashNav extends React.Component {
           </li>
           <li id="splash-nav-ellipses-button">
             <p>...</p>
-          </li>
+          </li> */}
 
         </ul>
       </div>

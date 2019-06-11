@@ -82,9 +82,14 @@
 .splash-nav-items {
   display: flex;
   width: 50%;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
+  padding-right: 50px;
   list-style-type: none;
+}
+
+.about-link {
+  text-decoration: none;
   color: #616061;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
@@ -128,14 +133,38 @@
 }
 
 
- .splash-nav-slack-logo {
-  height: 70px;
-  width: 150px;
-  background-image: image-url('slack-logo.jpeg');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
- }
+//  .splash-nav-slack-logo {
+//   height: 70px;
+//   width: 150px;
+//   background-image: image-url('slack-logo.jpeg');
+//   background-size: contain;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//  }
+
+.workmode-title {
+  display: flex;
+  text-decoration: none;
+  margin: 5px 0 0 20px;
+  
+}
+
+.workmode-title-text {
+  font-size: 50px;
+  line-height: 55px;
+  color: #611F69;
+}
+
+.w {
+  background-color: #611F69;
+  border: 1px solid #611F69;
+  border-radius: 6px;
+  width: 55px;
+  height: 55px;
+  color: white;
+  text-align: center;
+  line-height: 55px;
+}
 
 .splash-nav-slack-logo:hover {
   cursor: pointer;

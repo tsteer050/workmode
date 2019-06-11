@@ -29,7 +29,7 @@ class Splash extends React.Component {
           </div>
           <div className="splash-auth-links">
             <Link to="/signup" className="splash-signup-call-link"><button className="get-started-button" type="button">GET STARTED</button></Link>
-            <p className="splash-signup-call">Already using Slack?  <Link to="/login">Sign in.</Link></p>
+            <p className="splash-signup-call">Already using Workmode?  <Link to="/login">Sign in.</Link></p>
             
           </div>
         </div>
