@@ -10,7 +10,7 @@ class ChannelView extends React.Component {
   render() {
 
     return (
-      <div className="messages-container">
+      <div id="messages-container" className="messages-container">
         <MessageIndexContainer />
       </div>
     )

@@ -7,6 +7,11 @@ class MessageIndex extends React.Component {
     super(props);
   }
 
+  componentDidUpdate() {
+    var element = document.getElementById("messages-index");
+    element.scrollTop = element.scrollHeight;
+  }
+
   render() {
     if (this.props.loading) return <div></div>;
 
@@ -21,7 +26,7 @@ class MessageIndex extends React.Component {
    
 
     return (
-      <div className="messages-index">
+      <div id="messages-index" className="messages-index">
         <ul>
           {messages}
         </ul>
