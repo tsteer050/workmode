@@ -16,6 +16,3 @@ const UserListItem = ({ user, currentUser, handleDMCreate, handler, channelClass
 };
 
 export default UserListItem;
-
-
-// () => handleDMCreate(currentUser, user)

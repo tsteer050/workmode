@@ -17,16 +17,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MessageIndex));
-
-// Object.values(state.entities.channels[ownProps.match.params.channelId].messages)
-
-// const mapStateToProps = (state, { match }) => {
-
-    
-//     return ({
-//         currentUser,
-//         channelId,
-//         channelTitle: state.entities.channels[channelId].title
-//     });
-
-// };

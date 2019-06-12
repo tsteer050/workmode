@@ -5,6 +5,8 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
   }
+
+
   
   render() {
     const display = this.props.currentUser ? (
@@ -14,24 +16,27 @@ class Splash extends React.Component {
       </div>
     ) : (
         <div className="splash-main">
-          <h1>Imagine what you'll accomplish together</h1>
-          <div className='splash-image-window-1'></div>
-          <div className='splash-image-window-2'></div>
-          <div className='splash-image-window-3'></div>
+          <i className="fas fa-comment comment-bubble number-1 fast-orbit"></i>
+          <i className="fas fa-comment comment-bubble number-2 fast-orbit counter-clockwise-orbit"></i>
+          <i className="fas fa-comment comment-bubble number-3 slow-orbit clockwise-orbit"></i>
+          <i className="fas fa-comment comment-bubble number-4 slow-orbit counter-clockwise-orbit"></i>
+          <i className="fas fa-comment comment-bubble number-5 medium-orbit clockwise-orbit"></i>
+          <i className="fas fa-comment comment-bubble number-6 slow-orbit counter-clockwise-orbit"></i>
+          <i className="fas fa-comment comment-bubble number-7 fast-orbit counter-clockwise-orbit"></i>
+          <i className="fas fa-comment comment-bubble number-8 medium-orbit counter-clockwise-orbit"></i>
+          <i className="fas fa-comment comment-bubble number-9 fast-orbit clockwise-orbit"></i>
+
+          <h1 className="top-h1">Whatever work you do,</h1>
+          <h1>you can do it with Workmode</h1>
 
 
 
           <div className="splash-description">
-            <p>Workmode is a collaboration hub for work, no matter what work you do.
-            It’s a place where conversations happen, decisions are made, and
-            information is always at your fingertips.</p>
-            <p>Try Workmode with your team for free</p>
+            <p>Workmode gives your team the power and alignment you need to do your best work.</p>
           </div>
-          <div className="splash-auth-links">
-            <Link to="/signup" className="splash-signup-call-link"><button className="get-started-button" type="button">GET STARTED</button></Link>
-            <p className="splash-signup-call">Already using Workmode?  <Link to="/login">Sign in.</Link></p>
-            
-          </div>
+
+          <Link to="/signup" className="splash-signup-call-link"><button className="get-started-button" type="button">GET STARTED</button></Link>
+          <p className="splash-signup-call">Already using Workmode?  <Link to="/login">Sign in.</Link></p>
         </div>
       );
     return (

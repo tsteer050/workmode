@@ -2,11 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class SplashNav extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
-
 
   render() {
 
@@ -20,20 +15,6 @@ class SplashNav extends React.Component {
           <li>
             <Link to="/about" className="about-link">About</Link>
           </li>
-          {/* <li>
-            <p>Pricing</p>
-          </li>
-          <li>
-            <p>Support</p>
-          </li>
-          <li className="splash-nav-namespace-item">
-            <div className="splash-nav-app-academy-logo" />
-            <p>App Academy</p>
-          </li>
-          <li id="splash-nav-ellipses-button">
-            <p>...</p>
-          </li> */}
-
         </ul>
       </div>
     )

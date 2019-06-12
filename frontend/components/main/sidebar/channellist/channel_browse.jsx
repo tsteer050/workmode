@@ -65,7 +65,6 @@ class ChannelBrowse extends React.Component {
       <div id="channel-browse-modal" className="modal-main-div">
         <div className="close-modal-button" onClick={this.props.handleClick}>
           <h1>X</h1>
-          <h2>esc</h2>
         </div>
         <div className="modal-content">
           <h1 id="modal-title">Browse channels</h1>

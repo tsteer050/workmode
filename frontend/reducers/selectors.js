@@ -59,16 +59,7 @@ export const directMessageAlreadyExists = (state, currentUserId, otherUserId) =>
     return existingMessageMembership[0].channel_id;
   }
   return -1;
-//   return channels;
 };
 
 
 
-
-
-// export const directMessageAlreadyExists = (state, currentUserId, otherUserId) => {
-//   const channels = Object.values(state.entities.channels).filter((channel) => channel.is_direct_message === true);
-//   const channelIds = channels.map((channel) => channel.id);
-//   const memberships = Object.values(state.entities.memberships).filter((membership) => channelIds.includes(membership.channel_id));
-//   const channel = Object.values(memberships).filter((membership) => membership.user_id == otherUserId);
-// };

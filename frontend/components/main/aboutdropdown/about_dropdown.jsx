@@ -1,16 +1,26 @@
 import React from 'react';
 
-const AboutPage = () => {
-  return (
-    <div className="about-page">
-      <h3>Workmode is a project </h3>
-      <h3>developed by Trevor Steer</h3>
-      <div className="about-description">
-        <p>Technologies used include Ruby on Rails, React, Redux and PostgreSQL.</p>
-        <p>For additional information about this project, check out the readme on <a href="https://github.com/tsteer050/workmode">Github.</a></p>
-      </div>
-      <h4>Contact Trevor:</h4>
-      <div className="about-page-link-icons">
+class AboutDropdown extends React.Component {
+
+
+  render() {
+    return (
+      <div id="about-dropdown" className="about-dropdown">
+        <p id="about-p-1">
+          Workmode is a group messaging platform inspired by Slack.  Its core feature revolves around the use of web sockets to facilitate instant messaging between users.  
+        </p>
+        <p>
+          To see this feature in action, open up a second window in Incognito mode, navigate to this site, and create a second account.  When viewing and typing in the same channel, new messages will appear in both windows simultaneously.  
+        </p>
+        <p id="about-p-3">
+          For additional information about this project, check out the readme on <a href="https://github.com/tsteer050/">Github.</a>
+        </p>
+        <p>
+          Workmode was developed by Trevor Steer.  
+        </p>
+        <p>
+          Contact info:
+        </p>
         <ul>
           <li>
             <a className="icon-link" href="https://github.com/tsteer050">
@@ -40,11 +50,11 @@ const AboutPage = () => {
             <i className="fas fa-envelope link-icon"></i>
             <h5 className="contact-link-text">Email</h5>
           </a>
-          
+
         </ul>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
-export default AboutPage;
+export default AboutDropdown;

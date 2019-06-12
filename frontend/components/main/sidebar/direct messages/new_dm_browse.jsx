@@ -73,7 +73,6 @@ class NewDMBrowse extends React.Component {
       <div id="dm-browse-modal" className="modal-main-div">
         <div className="close-modal-button" onClick={this.props.closeDMModal}>
           <h1>X</h1>
-          <h2>esc</h2>
         </div>
           <div className="modal-content">
           <h1 id="modal-title">Direct Messages</h1>

@@ -7,6 +7,12 @@
   position: relative;
 }
 
+.outer-message-area-div {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
 .main-message-area {
   width: 100%;
   height: 100%;
@@ -66,7 +72,6 @@
 .message-profile-pic {
   height: 36px;
   width: 36px;
-  // background-image: image-url('default-profile-picture.png');
   border-radius: 4px;
   background-size: contain;
   background-position: center;
@@ -101,13 +106,17 @@
 
 .messages-container {
   margin-bottom: 66px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   overflow: hidden;
 }
 
 .messages-index {
   overflow-y: auto;
+  width: 100%;
 }
 
 .top-bar {

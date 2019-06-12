@@ -10,11 +10,6 @@ class DMList extends React.Component {
 
   }
 
-  // toggleDMModal() {
-  //   let modal = document.getElementById('dm-browse-modal');
-  //   modal.classList.toggle("show-modal");
-  // }
-
   render() {
     
     let directMessages = this.props.directMessages.map((channel) => {

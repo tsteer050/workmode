@@ -10,11 +10,6 @@ class ChannelList extends React.Component {
 
   }
 
-  // handleClick() {
-  //   let modal = document.getElementById('channel-browse-modal');
-  //   modal.classList.toggle("show-modal");
-  // }
-
   render() {
     let nonDirect = this.props.channels.filter((channel) => channel.is_direct_message === false);
     let channels = nonDirect.map((channel) => {
