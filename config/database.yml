@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: slack_production
-  username: slack
+  database: workmode_production
+  username: workmode
   password: <%= ENV['SLACK_DATABASE_PASSWORD'] %>
