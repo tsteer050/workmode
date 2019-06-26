@@ -1,73 +1,71 @@
-# README
+# Workmode
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Workmode is a channel-based group messaging platform inspired by Slack.  Technologies used include Ruby on Rails, React & Redux. Messages are sent via websockets, which are implemented using ActionCable with [react-actioncable-provider](https://github.com/cpunion/react-actioncable-provider) on the frontend.  You can check out the live deployment [here.](https://workmode.herokuapp.com)  Make sure to follow the instructions in the About pane and open up a second incognito window to see the websockets in action.
+
+---
 
 ![workmode-ss](https://user-images.githubusercontent.com/6785491/60200111-4d89b780-97fa-11e9-8134-c79e8e922825.png)
 
 
 ![Screen Shot 2019-06-26 at 10 07 15 AM](https://user-images.githubusercontent.com/6785491/60200061-31861600-97fa-11e9-8036-1e455c9c37c8.png)
 
-Create the connection to a channel
-```
-import { ActionCable } from 'react-actioncable-provider';
 
-<ActionCable
-channel={{ channel: 'ChannelsChannel' }}
-onReceived={this.handleReceivedChannel}
-/>
-```
 
-Wrap the app in action cable provider
+
+To create the connections on the frontend, the entire application is wrapped in `ActionCableProvider`: 
+
 ```
+// root.jsx
+
 <ActionCableProvider url={API_WS_ROOT}>
-<App />
+  <App />
 </ActionCableProvider>
 ```
 
-Sample of messages controller broadcasting to actioncable
+...which allows `<ActionCable>` components to be created for each individual connection.
+
 ```
+// sidebar.jsx
+
+import { ActionCable } from 'react-actioncable-provider';
+
+...
+
+<ActionCable
+  channel={{ channel: 'ChannelsChannel' }}
+  onReceived={this.handleReceivedChannel}
+/>
+```
+
+Two different sockets are implemented: one to send and receive channel memberships and another for messages, with each channel sending and receiving messages using a unique `channel_id` over the `MessagesChannel` socket.
+
+```
+// messages_controller.rb
+
 class Api::MessagesController < ApplicationController
 
-def create
-@message = Message.new(message_params)
-channel = Channel.find(message_params[:channel_id])
+  def create
+    @message = Message.new(message_params)
+    channel = Channel.find(message_params[:channel_id])
 
-if @message.save
-data = render_to_string '/api/messages/show'
-serialized_data = JSON.parse(data)
-MessagesChannel.broadcast_to channel, serialized_data
-head :ok
-end
-end
+    if @message.save
+      data = render_to_string '/api/messages/show'
+      serialized_data = JSON.parse(data)
+      MessagesChannel.broadcast_to channel, serialized_data
+      head :ok
+    end
+  end
 
-private
-
-def message_params
-params.require(:message).permit(:body, :author_id, :channel_id)
-end
+...
 
 end
 ```
 
-Sample filter for redux state (to find users eligible for direct messages.  must be members of same channel)
-```
-export const allUsersOfMemberChannels = (state, userId) => {
-const userMemberships = Object.values(state.entities.memberships)
-.filter((membership) => membership.user_id == userId);
-const channelIds = userMemberships.map((membership) => membership.channel_id);
-const channelMemberships = Object.values(state.entities.memberships)
-.filter((membership) => channelIds.includes(membership.channel_id));
-const userIds = Object.values(channelMemberships).map((membership) => membership.user_id);
-const users = Object.values(state.entities.users)
-.filter((user) => userIds.includes(user.id))
-.filter((user) => user.id != userId);
-return users;
-};
-```
+Users are able to send direct messages (specially flagged channels) to other users who share membership in a common channel.  As such, Redux needs to receive additional `user` and `message` data when a new channel `membership` is created.  This is accomplished via jbuilder in `/views/api/channels` as follows:
 
-jbuilder response from adding channel (api channels index view)
 ```
+// index.json.jbuilder
+
 json.channels do 
   @channels.each do |channel|
     json.set! channel.id do 
@@ -109,34 +107,23 @@ json.messages do
 end
 ```
 
+The actual filtering of these results takes place in individual component containers based on the data required.  The following example shows the filter that determines which other users are eligible to be messaged directly by the currently logged in user:
 
-Messages channel socket
 ```
-class MessagesChannel < ApplicationCable::Channel
-def subscribed
-channel = Channel.find_by(id: params[:channelId])
-stream_for channel
-end
+// selectors.js
 
-end
+export const allUsersOfMemberChannels = (state, userId) => {
+  const userMemberships = Object.values(state.entities.memberships)
+    .filter((membership) => membership.user_id == userId);
+  const channelIds = userMemberships.map((membership) => membership.channel_id);
+  const channelMemberships = Object.values(state.entities.memberships)
+    .filter((membership) => channelIds.includes(membership.channel_id));
+  const userIds = Object.values(channelMemberships).map((membership) => membership.user_id);
+  const users = Object.values(state.entities.users)
+    .filter((user) => userIds.includes(user.id))
+    .filter((user) => user.id != userId);
+  return users;
+};
 ```
 
-Channel search filtering
-```
-handleChange(e) {
-let currentChannels = [];
-let filteredChannels = [];
 
-if (e.target.value !== "") {
-currentChannels = this.props.nonMemberChannels;
-filteredChannels = currentChannels.filter(channel => {
-return channel.title.toLowerCase().includes(e.target.value.toLowerCase());
-});
-} else {
-filteredChannels = this.props.nonMemberChannels;
-}
-this.setState({
-filtered: filteredChannels
-});
-}
-```
